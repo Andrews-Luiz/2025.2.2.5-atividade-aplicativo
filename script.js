@@ -1,4 +1,4 @@
-// 1. Configuração do Banco de Dados (IndexedDB)
+// 1. 
 let db;
 const request = indexedDB.open("CineListaDB", 1);
 
@@ -18,7 +18,7 @@ let editId = null;
 
 const movieForm = document.getElementById("movie-form");
 
-// 2. Função para Adicionar ou Atualizar (CREATE / UPDATE)
+// 2. 
 movieForm.addEventListener("submit", (e) => {
     e.preventDefault();
     
@@ -45,7 +45,7 @@ movieForm.addEventListener("submit", (e) => {
     };
 });
 
-// 3. Função para Exibir Filmes (READ/RETRIEVE)
+// 3. 
 function displayMovies() {
     const movieList = document.getElementById("movie-list");
     movieList.innerHTML = ""; // Limpa a lista para reconstruir dinamicamente
@@ -71,7 +71,7 @@ function displayMovies() {
     };
 }
 
-// 4. Função para preparar a Edição (Auxiliar do UPDATE)
+// 4.
 function prepareEdit(id, title, rating) {
     document.getElementById("movie-title").value = title;
     document.getElementById("movie-rating").value = rating;
@@ -79,7 +79,7 @@ function prepareEdit(id, title, rating) {
     movieForm.querySelector("button").textContent = "Atualizar Filme";
 }
 
-// 5. Função para Deletar Filme (DELETE)
+// 5. 
 function deleteMovie(id) {
     if(confirm("Tem certeza que deseja remover este filme?")) {
         const transaction = db.transaction(["movies"], "readwrite");
